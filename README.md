@@ -105,8 +105,9 @@ Trained on the [California Housing dataset](https://www.kaggle.com/datasets/camn
 | Random Forest | 0.772 | 54,653 | 36,433 |
 | **Gradient Boosting** | **0.802** | **50,974** | **34,387** |
 
-Best Model: Gradient Boosting achieves the best performance and is the default model. 
-Target: `median_house_value` (in $100k).
+- Best Model: Gradient Boosting achieves the best performance and is the default model.
+ 
+- Target: `median_house_value` (in $100k).
 
 ---
 
