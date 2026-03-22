@@ -1,4 +1,4 @@
-# House Price Predictor
+# 🏡House Price Predictor
 
 A machine learning project for predicting housing prices using Python and scikit-learn.
 
