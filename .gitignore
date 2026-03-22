@@ -3,4 +3,6 @@ __pycache__/
 *.pyc
 .DS_Store
 *.pkl
+predictions.csv
+data/housing.csv
 

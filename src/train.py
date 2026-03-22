@@ -4,9 +4,23 @@ Training script for the house price predictor.
 
 import os
 import sys
-from sklearn.linear_model import LinearRegression
+
+# Ensure we have required packages (use project venv: source venv/bin/activate or ./train)
+try:
+    from sklearn.linear_model import LinearRegression
+except ImportError as e:
+    sys.exit(
+        f"{e}\n\n"
+        "Install dependencies: pip install -r requirements.txt\n"
+        "Or use the project venv: source venv/bin/activate  (then run this script)\n"
+        "Or run: ./train  (uses venv automatically)"
+    )
+
+from typing import Optional
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
 
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -17,7 +31,7 @@ from src.utils import load_data, prepare_data, save_model
 def train(
     data_path: str = "data/train.csv",
     model_path: str = "model/model.pkl",
-    target_column: str = None,
+    target_column: Optional[str] = None,
     model_type: str = "gradient_boosting",
     test_size: float = 0.2,
     random_state: int = 42,
@@ -40,7 +54,7 @@ def train(
     df = load_data(data_path)
     
     print("Preparing data...")
-    X_train, X_test, y_train, y_test, scaler, feature_names = prepare_data(
+    X_train, X_test, y_train, y_test, scaler, imputer, feature_names = prepare_data(
         df, target_column=target_column, test_size=test_size, random_state=random_state
     )
     
@@ -66,7 +80,7 @@ def train(
     y_pred = model.predict(X_test)
     metrics = {
         "mse": mean_squared_error(y_test, y_pred),
-        "rmse": mean_squared_error(y_test, y_pred, squared=False),
+        "rmse": np.sqrt(mean_squared_error(y_test, y_pred)),
         "mae": mean_absolute_error(y_test, y_pred),
         "r2": r2_score(y_test, y_pred),
     }
@@ -78,7 +92,7 @@ def train(
     print(f"R²:   {metrics['r2']:.4f}")
     
     # Save model
-    save_model(model, scaler, feature_names, path=model_path)
+    save_model(model, scaler, imputer, feature_names, path=model_path)
     print(f"\nModel saved to {model_path}")
     
     return metrics

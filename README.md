@@ -38,6 +38,8 @@ house-price-ml/
 
 ```bash
 cd house-price-ml
+python3 -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -52,6 +54,8 @@ Place your housing dataset as `data/train.csv`. The CSV should have:
 ### 2. Train the model
 
 ```bash
+./train
+# or, with venv activated:
 python src/train.py --data data/train.csv --model model/model.pkl
 ```
 
@@ -63,8 +67,22 @@ Options:
 ### 3. Make predictions
 
 ```bash
+./predict --input data/to_predict.csv --output predictions.csv
+# or, with venv activated:
 python src/predict.py --input data/to_predict.csv --output predictions.csv
 ```
+
+## Results
+
+Trained on the [California Housing dataset](https://www.kaggle.com/datasets/camnugent/california-housing-prices) (~20K samples, 8 features). Model comparison (80/20 train-test split):
+
+| Model | R² | RMSE | MAE |
+|-------|-----|------|-----|
+| Linear Regression | 0.614 | 71,131 | 51,810 |
+| Random Forest | 0.772 | 54,653 | 36,433 |
+| **Gradient Boosting** | **0.802** | **50,974** | **34,387** |
+
+Gradient Boosting achieves the best performance and is the default model. Target: `median_house_value` (in $100k).
 
 ## License
 
