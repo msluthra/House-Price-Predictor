@@ -43,19 +43,21 @@ house-price-ml/
 
 ## 🛠️ Tech Stack
 
-- 🐍 Python 3.8+
-- 🔢 NumPy
-- 🐼 Pandas
-- 🤖 scikit-learn
+- Python 3.8+
+- NumPy
+- Pandas
+- scikit-learn
 
 ---
 
 ## ⚙️ Setup
 
+```bash
 cd house-price-ml
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate   # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
+```
 
 ---
 
