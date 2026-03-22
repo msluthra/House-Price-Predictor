@@ -115,16 +115,6 @@ Trained on the [California Housing dataset](https://www.kaggle.com/datasets/camn
 
 Run the [EDA notebook](notebooks/eda.nbconvert.ipynb) to explore the data:
 
-```bash
-jupyter notebook notebooks/eda.ipynb
-# or: jupyter lab notebooks/eda.ipynb
-```Run the [EDA notebook](notebooks/eda.nbconvert.ipynb) to explore the data:
-
-```bash
-jupyter notebook notebooks/eda.ipynb
-# or: jupyter lab notebooks/eda.ipynb
-```
-
 Includes:
 - Feature correlations
 - Price distributions
