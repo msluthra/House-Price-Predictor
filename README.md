@@ -7,7 +7,10 @@ A machine learning project for predicting housing prices using Python and scikit
 ```
 house-price-ml/
 ├── data/
-│   └── train.csv
+│   ├── train.csv
+│   └── to_predict.csv
+├── notebooks/
+│   └── eda.ipynb          # Exploratory Data Analysis
 ├── src/
 │   ├── train.py
 │   ├── predict.py
@@ -17,6 +20,8 @@ house-price-ml/
 ├── requirements.txt
 └── README.md
 ```
+
+📓 **[Exploratory Data Analysis (EDA) Notebook](notebooks/eda.ipynb)** — Visualizations, correlations, and insights from the California Housing dataset.
 
 ## Tools & Libraries
 
@@ -83,6 +88,15 @@ Trained on the [California Housing dataset](https://www.kaggle.com/datasets/camn
 | **Gradient Boosting** | **0.802** | **50,974** | **34,387** |
 
 Gradient Boosting achieves the best performance and is the default model. Target: `median_house_value` (in $100k).
+
+## EDA
+
+Run the [EDA notebook](notebooks/eda.ipynb) to explore the data:
+
+```bash
+jupyter notebook notebooks/eda.ipynb
+# or: jupyter lab notebooks/eda.ipynb
+```
 
 ## License
 
