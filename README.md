@@ -21,7 +21,7 @@ house-price-ml/
 └── README.md
 ```
 
-📓 **[Exploratory Data Analysis (EDA) Notebook](notebooks/eda.ipynb)** — Visualizations, correlations, and insights from the California Housing dataset.
+📓 **[Exploratory Data Analysis (EDA) Notebook](notebooks/eda.nbconvert.ipynb)** — Visualizations, correlations, and insights from the California Housing dataset.
 
 ## Tools & Libraries
 
@@ -91,7 +91,7 @@ Gradient Boosting achieves the best performance and is the default model. Target
 
 ## EDA
 
-Run the [EDA notebook](notebooks/eda.ipynb) to explore the data:
+Run the [EDA notebook](notebooks/eda.nbconvert.ipynb) to explore the data:
 
 ```bash
 jupyter notebook notebooks/eda.ipynb
