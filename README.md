@@ -19,14 +19,15 @@ This project builds a complete machine learning workflow to predict housing pric
 
 ---
 
-## 📁 Project Structure
+## 📓 Project Structure
 
+```
 house-price-ml/
 ├── data/
 │   ├── train.csv
 │   └── to_predict.csv
 ├── notebooks/
-│   └── eda.ipynb
+│   └── eda.ipynb          # Exploratory Data Analysis
 ├── src/
 │   ├── train.py
 │   ├── predict.py
@@ -35,9 +36,9 @@ house-price-ml/
 │   └── model.pkl
 ├── requirements.txt
 └── README.md
+```
 
-EDA Notebook: notebooks/eda.ipynb
-
+**[Exploratory Data Analysis (EDA) Notebook](notebooks/eda.nbconvert.ipynb)** — Visualizations, correlations, and insights from the California Housing dataset.
 ---
 
 ## 🛠️ Tech Stack
